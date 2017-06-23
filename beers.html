@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magasin</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+   <script src="node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            {{ site }}
+        </header>
+        <section>
+            <beer-list :collection="allBeers"></beer-list>
+        </section>
+    </div> <!-- #app -->
+
+    <template id="beer-list">
+       <ul>
+            <beer-item v-for="beer in collection" :infobeer="beer"></beer-item>
+       </ul>
+    </template>
+    <template id="beer-item">
+        <li>{{ this.infobeer.marque }} {{ this.infobeer.type }}</li>
+    </template>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="beers.js"></script>
+</body>
+</html>
