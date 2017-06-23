@@ -9,23 +9,30 @@
    <script src="node_modules/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
+
+  <!-- Application principale -->
     <div id="app">
-        <header>
-            {{ site }}
-        </header>
-        <section>
-            <beer-list :collection="allBeers"></beer-list>
-        </section>
+      <header>
+        {{ site }}
+      </header>
+      <section>
+        <beer-list :collection="allBeers"></beer-list>
+      </section>
     </div> <!-- #app -->
 
+  <!-- Template du component beer-list -->
     <template id="beer-list">
-       <ul>
-            <beer-item v-for="beer in collection" :infobeer="beer"></beer-item>
-       </ul>
+      <ul>
+        <beer-item v-for="beer in collection" :infobeer="beer"></beer-item>
+      </ul>
     </template>
+
+  <!-- Template du component beer-item -->
     <template id="beer-item">
-        <li>{{ this.infobeer.marque }} {{ this.infobeer.type }}</li>
+      <li>{{ this.infobeer.marque }} {{ this.infobeer.type }}</li>
     </template>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="beers.js"></script>
 </body>
